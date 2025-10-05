@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLX</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="title"><a href="index.html">Olx</a></h1>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="index.html">Market</a></li>
+                <li><a href="create-prod.html">Create product</a></li>
+                <li><a href="edit-prod.html">Edit product</a></li>
+            </ul>
+        </nav>
+        <form action="#">
+            <input type="text" class="search" placeholder="Search..." id="searchInput">
+            <button type="submit" id="searchButton">Search</button>
+            <button type="button" class="clear" id="searchClear">Clear</button>
+        </form>
+    </header>
+    <section class="hero">
+        <section class="manage">
+            <h1>Manage Products</h1>
+            <div class="switch">
+                <label for="toggle">Sort by the cheapest</label>
+                <input type="checkbox" id="sort-toggle">
+            </div>
+            <button type="button" id="countButton">Count Total Expenses</button>
+            <data id="counterDisplay">Total expenses: $0.00</data>
+        </section>
+        <section class="market">
+                <!-- Products will be dynamically inserted here -->
+        </section>
+    </section>
+</body>
+
+<script type="module" src="js/script.js"></script>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="title"><a href="index.html">Olx</a></h1>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="index.html">Market</a></li>
+                <li><a href="create-prod.html">Create product</a></li>
+                <li><a href="edit-prod.html">Edit product</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1>Edit Product</h1>
+            <p>Modify existing products in the market</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="product-list-section" id="productListSection">
+            <h2>Select a Product to Edit</h2>
+            <div class="product-list" id="productList">
+            </div>
+        </div>
+
+        <div class="form-container" id="editFormContainer" style="display: none;">
+            <h2>Edit Product</h2>
+            <form id="editProductForm">
+                <input type="hidden" id="editProductId">
+                
+                <div class="form-group">
+                    <label for="editTitle">Title</label>
+                    <input type="text" id="editTitle" placeholder="Enter product title" >
+                </div>
+
+                <div class="form-group">
+                    <label for="editDescription">Description</label>
+                    <textarea id="editDescription" placeholder="Provide a detailed description of the product"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="editPrice">Price ($)</label>
+                    <div class="price">
+                        <span class="dollar-sign">$</span>
+                        <input type="number" id="editPrice" min="0" step="0.1" placeholder="5.00">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="editProductType">Product Type</label>
+                    <select id="editProductType">
+                        <option value="">Select a type</option>
+                        <option value="camera">Camera</option>
+                        <option value="laptop">Laptop</option>
+                        <option value="smartphone">Smartphone</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="edit-list-btn">Update Product</button>
+                    <button type="button" class="cancel-btn" id="cancelEdit">Cancel</button>
+                </div>
+            </form>
+
+            <div class="error-message" id="editErrorMessage">
+                Oh snap! Change a few things up and try submitting again.
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/js/editProducts.js"></script>
+</body>
+
+</html>

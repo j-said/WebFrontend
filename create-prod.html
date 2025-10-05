@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create product</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+    <header>
+        <h1 class="title"><a href="index.html">Olx</a></h1>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="index.html">Market</a></li>
+                <li><a href="create-prod.html">Create product</a></li>
+                <li><a href="edit-prod.html">Edit product</a></li>
+            </ul>
+        </nav>
+        <h1>Create product</h1>
+        <p>Add a new product to the market</p>
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" placeholder="Enter product title">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" placeholder="Provide a detailed description of the product"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price ($)</label>
+                    <div class="price">
+                        <span class="dollar-sign">$</span>
+                        <input type="number" id="price" min="0" step="0.1" placeholder="5.00" value="0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>product Type</label>
+                    <select id="productType">
+                        <option value=""></option>
+                        <option value="camera">Camera</option>
+                        <option value="laptop">Laptop</option>
+                        <option value="smartphone">Smartphone</option>
+                    </select>
+                    <button type="submit" class="submit-btn" id="submitProduct">Submit</button>
+            </form>
+        </div>
+
+
+        <div class="error-message" id="errorMessage">
+            Oh snap! Change a few things up and try submitting again.
+        </div>
+    </div>
+
+    <script type="module" src="js/createProduct.js"></script>
+</body>
+
+</html>
