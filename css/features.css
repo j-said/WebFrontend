@@ -1,0 +1,143 @@
+ .features {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin: 3em 0;
+     gap: 3em;
+ }
+
+ .features__cards {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     gap: 2em;
+ }
+
+ .features__content {
+     flex: 1;
+ }
+
+ .features__content h2 {
+     font-size: 2.5rem;
+     font-weight: 700;
+     margin-bottom: 0.8em;
+     line-height: 1.2;
+ }
+
+ .features__content p {
+     font-size: 1.2rem;
+     margin-bottom: 2.5em;
+     line-height: 1.7;
+     color: var(--text-color);
+ }
+
+ .features__content ul {
+     list-style: none;
+     padding: 0;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 1em;
+ }
+
+ .features__content ul li {
+     padding: 0.8em 0;
+     position: relative;
+     padding-left: 2em;
+     font-size: 1.1rem;
+ }
+
+ .features__content ul li:before {
+     content: "✓";
+     position: absolute;
+     left: 0;
+     color: var(--secondary-color);
+     font-weight: bold;
+     font-size: 1.2rem;
+ }
+
+ .reminder-card {
+     background: white;
+     border-radius: var(--border-radius);
+     padding: 2em;
+     box-shadow: var(--box-shadow-light);
+     display: flex;
+     align-items: flex-start;
+     gap: 1em;
+     max-width: 50%;
+     transition: box-shadow var(--transition-duration) ease, transform var(--transition-duration) ease;
+     position: static;
+     width: 100%;
+     margin-bottom: 0;
+     box-shadow: var(--box-shadow-medium);
+     min-height: 140px;
+     height: auto;
+ }
+
+ .reminder-card__icon {
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     flex-shrink: 0;
+ }
+
+ .reminder-card__text {
+     margin: 0;
+     line-height: 1.5;
+     flex: 1;
+ }
+
+ .reminder-card:hover {
+     transform: scale(1.04);
+     box-shadow: var(--box-shadow-heavy);
+     z-index: 1;
+ }
+
+ /* Hover effect for larger screens */
+ @media screen and (min-width: 769px) {
+     .features__cards {
+         gap: 2em;
+     }
+
+     .reminder-card {
+         max-width: 100%;
+         width: 100%;
+         margin-bottom: 0;
+         box-shadow: var(--box-shadow-medium);
+         transform: none;
+     }
+ }
+
+ /* Mobile layout adjustments */
+ @media screen and (max-width: 768px) {
+     .features {
+         flex-direction: column;
+     }
+
+     .reminder-card {
+         max-width: 100%;
+         position: static;
+         min-height: auto;
+     }
+
+     .features__cards {
+         height: auto;
+         min-height: auto;
+     }
+
+     .reminder-card:hover {
+         box-shadow: var(--box-shadow-light);
+         min-height: auto;
+     }
+
+     .features__content h2 {
+         font-size: 2rem;
+     }
+
+     .features__content p {
+         font-size: 1.1rem;
+     }
+
+     .features__content ul li {
+         font-size: 1rem;
+     }
+ }

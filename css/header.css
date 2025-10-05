@@ -1,0 +1,145 @@
+.header {
+    display: flex;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin: 0;
+}
+
+.header__cta {
+    flex-shrink: 0;
+    padding: 1em 2em;
+    border: 2px solid var(--primary-color);
+    border-radius: 4em;
+    background-color: var(--white);
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.header__cta:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.header__nav ul {
+    margin: 1em;
+    padding: 1em;
+    display: flex;
+    gap: 3em;
+}
+
+.header__nav ul li {
+    list-style: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .header__nav ul li:first-child {
+        padding-right: calc(5em + 5vw);
+    }
+}
+
+/* Tablet (768px to 1024px) */
+@media screen and (max-width: 1024px) {
+    .header__nav ul {
+        gap: 1em;
+    }
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger-icon {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+/* Mobile (525px and below) */
+@media screen and (max-width: 525px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1em;
+        padding: 1em;
+    }
+
+    .header__nav {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--white);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+
+    .header__nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .header__nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        padding: 1.5em 0;
+        margin: 0;
+    }
+
+    .header__nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header__nav ul li a {
+        display: block;
+        padding: 1em;
+        transition: background 0.2s;
+    }
+
+    .header__nav ul li a:hover {
+        background: #f5f5f5;
+    }
+
+    .header__cta {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        border: none;
+        border-radius: 0;
+    }
+
+    .hamburger:hover {
+        background: none;
+        border: none;
+    }
+}

@@ -1,0 +1,27 @@
+ footer {
+     margin-top: 2em;
+     padding: 2em 0;
+     background: var(--white);
+     text-align: center;
+     color: #888;
+     font-size: 1em;
+ }
+
+ footer h2 {
+     margin-bottom: 0.5em;
+     color: var(--heading-color);
+ }
+
+ /* Smartphones */
+ @media screen and (max-width: 768px) {
+     footer {
+         padding: 1em 0.5em;
+     }
+ }
+
+ /* 4K Ultra HD */
+ @media screen and (min-width: 2560px) {
+     footer {
+         font-size: 2em;
+     }
+ }

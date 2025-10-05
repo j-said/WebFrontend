@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing</title>
+
+    <!-- Montserrat font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- My styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <main class="container">
+        <header class="header">
+            <h1 class="header__title"><a href="">Relationz</a></h1>
+            <button class="hamburger" aria-label="Open navigation" tabindex="0">
+                <span style="display:none">Menu</span>
+                <img class="hamburger__icon" src="images/hamburger.svg" alt="Menu icon" width="32" height="32" />
+            </button>
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="">Login</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Enterprise</a></li>
+                    <li><a href="">Pricing</a></li>
+                </ul>
+            </nav>
+            <button class="header__cta">Try it for free</button>
+        </header>
+
+        <section class="hero">
+            <article class="hero__content">
+                <h2>Take your relationships to the next level</h2>
+                <p>The multichannel sales engagement platform which automates personal email
+                    outreach, calls, and tasks, while Sales can focus on what really matters – closing deals.</p>
+                <form class="hero__form">
+                    <input type="email" placeholder="Email id" required aria-label="Email address">
+                    <button type="submit">Try it for free</button>
+                </form>
+            </article>
+            <figure class="hero__image">
+                <img src="images/phone.svg" alt="PhoneApp" class="app-display">
+            </figure>
+        </section>
+
+        <section class="features">
+            <article class="features__cards">
+                <section class="reminder-card" aria-label="Reminder">
+                    <img src="images/g1.svg" alt="Profile picture" class="reminder-card__icon">
+                    <p class="reminder-card__text">You have a meeting with <strong>Surbhi</strong> to help her with her
+                        portfolio. She got a new pet (Dog named Tiger).</p>
+                </section>
+                <section class="reminder-card" aria-label="Reminder">
+                    <img src="images/g2.svg" alt="Profile picture" class="reminder-card__icon">
+                    <p class="reminder-card__text"><strong>Ripal</strong> has recently been ro Thailand and wants to
+                        discuss
+                        about new Job opportunity</p>
+                </section>
+                <section class="reminder-card" aria-label="Reminder">
+                    <img src="images/g3.svg" alt="Profile picture" class="reminder-card__icon">
+                    <p class="reminder-card__text"><strong>Prashasti</strong> hasn't responded to your Email from 22
+                        Jan,
+                        2020<br><strong>Want to check up on her?</strong><a href="">Follow up</a></p>
+                </section>
+            </article>
+
+            <article class="features__content">
+                <h2>Get reminders to follow up</h2>
+                <p>We remind you of everything important and track everything that's
+                    important to your important ones so you always stay connected.</p>
+                <ul>
+                    <li>Birthday</li>
+                    <li>Business Meetings</li>
+                    <li>Friends & Family</li>
+                    <li>Surroundings</li>
+                </ul>
+            </article>
+        </section>
+
+        <img src="images/sico.svg" class="decorative" alt="" aria-hidden="true">
+
+        <section class="sync-feature">
+            <article class="sync-feature__content">
+                <h2>Our sync remembers everything</h2>
+                <p>We build a huge database of all your contacts with all the
+                    possible details they share with you and you can access it anywhere, anytime.</p>
+                <ul>
+                    <li>Available on devices</li>
+                    <li>Can be accessed via phonebook</li>
+                    <li>Search details</li>
+                    <li>24/7 Support</li>
+                </ul>
+            </article>
+            <figure class="sync-feature__image">
+                <img src="images/prof-card.svg" alt="Profile card demonstration">
+            </figure>
+        </section>
+
+        <img src="images/cico.svg" class="decorative" alt="" aria-hidden="true">
+
+        <section class="sync-feature">
+            <figure class="sync-feature__image">
+                <img src="images/anxiety-card.svg" alt="Profile card demonstration">
+            </figure>
+            <article class="sync-feature__content">
+                <h2>Stay connected in a few clicks</h2>
+                <p>The multichannel sales engagement platform which automates personal email outreach, calls, and tasks,
+                    while Sales can focus what really matters - closing</p>
+            </article>
+        </section>
+
+        <section class="cta">
+            <div class="cta__content">
+                <h2>Form better relationships with everyone</h2>
+                <p>Start your free 14 days trial.</p>
+            </div>
+            <button class="cta__button">Try it for free</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <h2>Relationz</h2>
+        <p>Copyright © 2010 - 2025 Relationz Ltd. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('.header__nav');
+            const hamburgerIcon = hamburger.querySelector('.hamburger__icon');
+            const hamburgerSVG = 'images/hamburger.svg';
+            const crossSVG = 'images/cross.svg';
+
+            function setHamburgerIcon(isOpen) {
+                hamburgerIcon.src = isOpen ? crossSVG : hamburgerSVG;
+                hamburgerIcon.alt = isOpen ? 'Close menu' : 'Menu icon';
+            }
+
+            // Toggle navigation menu
+            hamburger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                nav.classList.toggle('active');
+                setHamburgerIcon(nav.classList.contains('active'));
+            });
+
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('.header__nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('active');
+                    setHamburgerIcon(false);
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!event.target.closest('.header')) {
+                    nav.classList.remove('active');
+                    setHamburgerIcon(false);
+                }
+            });
+
+            // Set initial icon
+            setHamburgerIcon(false);
+        });
+    </script>
+</body>
+
+</html>
