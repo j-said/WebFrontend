@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}OLX - Market{% endblock %}
+
+{% block header_content %}
+<form action="#" id="searchForm">
+    <input type="text" class="search" placeholder="Search..." id="searchInput">
+    <button type="submit" id="searchButton">Search</button>
+    <button type="button" class="clear" id="searchClear">Clear</button>
+</form>
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <section class="manage">
+        <h1>Manage Products</h1>
+        <div class="switch">
+            <label for="sort-toggle">Sort by the cheapest</label>
+            <input type="checkbox" id="sort-toggle">
+        </div>
+        <button type="button" id="countButton">Count Total Expenses</button>
+        <data id="counterDisplay">Total expenses: $0.00</data>
+    </section>
+
+    <section class="market">
+    </section>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename='js/product.js') }}"></script>
+{% endblock %}
